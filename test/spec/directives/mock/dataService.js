@@ -2,13 +2,13 @@
 
 angular.module('mocks', [])
 .value('suspectDataMock', {
-  name: 'john doe',
+  fullname: 'john doe',
   age: 32
 })
 .factory('dataServiceMock', function dataServiceMockFactory () {
   return {
     suspectData: {
-      name: 'joe burglar',
+      fullname: 'joe burglar',
       age: 17
     }
   };
