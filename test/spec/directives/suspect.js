@@ -8,6 +8,8 @@ describe('Directive: suspect', function () {
 
   var element, scope;
 
+  var template = '<suspect data="data"></suspect>';
+
   beforeEach(inject(function($injector) {
     var $rootScope = $injector.get('$rootScope');
     var $compile = $injector.get('$compile');
@@ -19,7 +21,6 @@ describe('Directive: suspect', function () {
       name: 'david'
     };
 
-    var template = '<suspect data="data"></suspect>';
     element = $compile(template)(childScope);
 
     parentScope.$digest();
