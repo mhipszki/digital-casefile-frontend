@@ -8,7 +8,9 @@ describe('Directive: suspect', function () {
 
   var element, scope;
 
-  beforeEach(inject(function ($rootScope, $compile) {
+  beforeEach(inject(function($injector) {
+    var $rootScope = $injector.get('$rootScope');
+    var $compile = $injector.get('$compile');
 
     var parentScope = $rootScope.$new();
     var childScope = parentScope.$new();
@@ -24,16 +26,8 @@ describe('Directive: suspect', function () {
     scope = element.isolateScope();
   }));
 
-  it('should complile the template', inject(function () {
-    //expect(element.hasClass('suspect')).toBe(true);
+  it('should have a form', inject(function () {
     expect(element.find('form').length).toBe(1);
   }));
 
-
-
-
-
-  // it('should have isolated scope', inject(function(){
-  //   expect(element.hasClass('ng-isolate-scope')).toBe(true);
-  // }));
 });
